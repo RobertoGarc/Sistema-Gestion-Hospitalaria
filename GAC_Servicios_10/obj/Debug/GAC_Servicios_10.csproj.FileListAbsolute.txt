@@ -1,0 +1,12 @@
+C:\Users\acuri\source\repos\GAC_GestionHospitalaria_10\GAC_Servicios_10\bin\Debug\GAC_Servicios_10.dll
+C:\Users\acuri\source\repos\GAC_GestionHospitalaria_10\GAC_Servicios_10\bin\Debug\GAC_Servicios_10.pdb
+C:\Users\acuri\source\repos\GAC_GestionHospitalaria_10\GAC_Servicios_10\obj\Debug\GAC_Servicios_10.csprojAssemblyReference.cache
+C:\Users\acuri\source\repos\GAC_GestionHospitalaria_10\GAC_Servicios_10\obj\Debug\GAC_Servicios_10.csproj.CoreCompileInputs.cache
+C:\Users\acuri\source\repos\GAC_GestionHospitalaria_10\GAC_Servicios_10\obj\Debug\GAC_Servicios_10.dll
+C:\Users\acuri\source\repos\GAC_GestionHospitalaria_10\GAC_Servicios_10\obj\Debug\GAC_Servicios_10.pdb
+C:\Users\Roberto\source\repos\GAC_GestionHospitalaria_10\GAC_Servicios_10\bin\Debug\GAC_Servicios_10.dll
+C:\Users\Roberto\source\repos\GAC_GestionHospitalaria_10\GAC_Servicios_10\bin\Debug\GAC_Servicios_10.pdb
+C:\Users\Roberto\source\repos\GAC_GestionHospitalaria_10\GAC_Servicios_10\obj\Debug\GAC_Servicios_10.csprojAssemblyReference.cache
+C:\Users\Roberto\source\repos\GAC_GestionHospitalaria_10\GAC_Servicios_10\obj\Debug\GAC_Servicios_10.csproj.CoreCompileInputs.cache
+C:\Users\Roberto\source\repos\GAC_GestionHospitalaria_10\GAC_Servicios_10\obj\Debug\GAC_Servicios_10.dll
+C:\Users\Roberto\source\repos\GAC_GestionHospitalaria_10\GAC_Servicios_10\obj\Debug\GAC_Servicios_10.pdb

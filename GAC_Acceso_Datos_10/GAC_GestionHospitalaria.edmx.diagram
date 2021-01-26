@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="17b0301fcc4644c6b212ba9fecb2119d" Name="Diagram1" ZoomLevel="55">
+        <EntityTypeShape EntityType="GestionHospitalariaModel.AREAS" Width="1.5" PointX="7.5" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionHospitalariaModel.CANTONES" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionHospitalariaModel.CARGOS" Width="1.5" PointX="12.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionHospitalariaModel.CATEGORIAS" Width="1.5" PointX="7.5" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionHospitalariaModel.CITA_ESTADOS" Width="1.5" PointX="9.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionHospitalariaModel.CITAS" Width="1.5" PointX="12" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionHospitalariaModel.CONDICIONES" Width="1.5" PointX="7.5" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionHospitalariaModel.CONSULTAS" Width="1.5" PointX="14.25" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionHospitalariaModel.ESPECIALIDADES" Width="1.5" PointX="15" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionHospitalariaModel.EXAMENES" Width="1.5" PointX="16.5" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionHospitalariaModel.HOSPITALES" Width="1.5" PointX="9.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionHospitalariaModel.MEDICO_ESPECIALIDAD" Width="1.5" PointX="17.25" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionHospitalariaModel.MEDICOS" Width="1.5" PointX="15" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionHospitalariaModel.PACIENTES" Width="1.5" PointX="9.75" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionHospitalariaModel.PARENTESCOS" Width="1.5" PointX="7.5" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionHospitalariaModel.PARROQUIAS" Width="1.5" PointX="7.5" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionHospitalariaModel.PROVINCIAS" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionHospitalariaModel.RECETA" Width="1.5" PointX="16.5" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionHospitalariaModel.REGIONES" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionHospitalariaModel.SEXO" Width="1.5" PointX="12.75" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionHospitalariaModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionHospitalariaModel.TIPO_EXAMENES" Width="1.5" PointX="14.25" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionHospitalariaModel.TIPOS_H" Width="1.5" PointX="7.5" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionHospitalariaModel.TIPOS_SANGE" Width="1.5" PointX="7.5" PointY="23.25" IsExpanded="true" />
+        <AssociationConnector Association="GestionHospitalariaModel.FK_HOSPITALES_AREAS" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionHospitalariaModel.FK_CANTONES_PROVINCIAS" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionHospitalariaModel.FK_HOSPITALES_CANTONES" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionHospitalariaModel.FK_PARROQUIAS_CANTONES" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionHospitalariaModel.FK_MEDICOS_CARGOS" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionHospitalariaModel.FK_HOSPITALES_CATEGORIAS" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionHospitalariaModel.FK_CITAS_CITA_ESTADOS" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionHospitalariaModel.FK_CITAS_HOSPITALES" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionHospitalariaModel.FK_CITAS_MEDICOS" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionHospitalariaModel.FK_CITAS_PACIENTES" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionHospitalariaModel.FK_CONSULTAS_CITAS" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionHospitalariaModel.FK_PACIENTES_CONDICIONES" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionHospitalariaModel.FK_EXAMENES_CONSULTAS" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionHospitalariaModel.FK_RECETA_CONSULTAS" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionHospitalariaModel.FK_MEDICO_ESPECIALIDAD_ESPECIALIDADES" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionHospitalariaModel.FK_EXAMENES_TIPO_EXAMENES" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionHospitalariaModel.FK_HOSPITALES_PARROQUIAS" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionHospitalariaModel.FK_HOSPITALES_PROVINCIAS" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionHospitalariaModel.FK_HOSPITALES_TIPOS_H" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionHospitalariaModel.FK_MEDICOS_HOSPITALES" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionHospitalariaModel.FK_MEDICO_ESPECIALIDAD_MEDICOS" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionHospitalariaModel.FK_MEDICOS_SEXO" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionHospitalariaModel.FK_PACIENTES_PARENTESCOS" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionHospitalariaModel.FK_PACIENTES_SEXO" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionHospitalariaModel.FK_PACIENTES_TIPOS_SANGE" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionHospitalariaModel.FK_PROVINCIAS_REGIONES" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,673 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GestionHospitalariaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AREAS">
+    <Key>
+      <PropertyRef Name="Id_area" />
+    </Key>
+    <Property Name="Id_area" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Area" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CANTONES">
+    <Key>
+      <PropertyRef Name="Id_canton" />
+    </Key>
+    <Property Name="Id_canton" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_provincia" Type="int" Nullable="false" />
+    <Property Name="Canton" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CARGOS">
+    <Key>
+      <PropertyRef Name="Id_cargo" />
+    </Key>
+    <Property Name="Id_cargo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cargo" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CATEGORIAS">
+    <Key>
+      <PropertyRef Name="Id_categoria" />
+    </Key>
+    <Property Name="Id_categoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Categoria" Type="nchar" MaxLength="10" />
+    <Property Name="Max_pacientes" Type="int" />
+  </EntityType>
+  <EntityType Name="CITA_ESTADOS">
+    <Key>
+      <PropertyRef Name="Id_estado" />
+    </Key>
+    <Property Name="Id_estado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Estado" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CITAS">
+    <Key>
+      <PropertyRef Name="Id_cita" />
+    </Key>
+    <Property Name="Id_cita" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_paciente" Type="int" Nullable="false" />
+    <Property Name="Id_hospital" Type="int" />
+    <Property Name="Id_medico" Type="int" Nullable="false" />
+    <Property Name="Fecha" Type="date" Nullable="false" />
+    <Property Name="Hora" Type="datetime" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="Observacion" Type="text" />
+  </EntityType>
+  <EntityType Name="CONDICIONES">
+    <Key>
+      <PropertyRef Name="Id_condicion" />
+    </Key>
+    <Property Name="Id_condicion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Condicion" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CONSULTAS">
+    <Key>
+      <PropertyRef Name="Id_consulta" />
+    </Key>
+    <Property Name="Id_consulta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_cita" Type="int" />
+    <Property Name="Talla" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Peso" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Presion" Type="varchar" MaxLength="50" />
+    <Property Name="Sintomas" Type="text" />
+    <Property Name="Diagnostico" Type="text" />
+  </EntityType>
+  <EntityType Name="ESPECIALIDADES">
+    <Key>
+      <PropertyRef Name="Id_especialidad" />
+    </Key>
+    <Property Name="Id_especialidad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Especialidad" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="EXAMENES">
+    <Key>
+      <PropertyRef Name="Id_orden" />
+    </Key>
+    <Property Name="Id_orden" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Consulta" Type="int" />
+    <Property Name="Id_examen" Type="int" />
+    <Property Name="Detalle" Type="text" />
+  </EntityType>
+  <EntityType Name="HOSPITALES">
+    <Key>
+      <PropertyRef Name="Id_hospital" />
+    </Key>
+    <Property Name="Id_hospital" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+    <Property Name="Tipo" Type="int" />
+    <Property Name="Categoria" Type="int" />
+    <Property Name="Area" Type="int" />
+    <Property Name="Provincia" Type="int" />
+    <Property Name="Canton" Type="int" />
+    <Property Name="Parroquia" Type="int" />
+    <Property Name="Direccion" Type="varchar" MaxLength="50" />
+    <Property Name="Fecha_Creacion" Type="date" />
+    <Property Name="Gerente" Type="nvarchar" MaxLength="50" />
+    <Property Name="Observacion" Type="text" />
+  </EntityType>
+  <EntityType Name="MEDICO_ESPECIALIDAD">
+    <Key>
+      <PropertyRef Name="Id_medespe" />
+    </Key>
+    <Property Name="Id_medespe" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Medico" Type="int" />
+    <Property Name="id_especialidad" Type="int" />
+  </EntityType>
+  <EntityType Name="MEDICOS">
+    <Key>
+      <PropertyRef Name="Id_medico" />
+    </Key>
+    <Property Name="Id_medico" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cedula" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Nombres" Type="varchar" MaxLength="50" />
+    <Property Name="Apellidos" Type="varchar" MaxLength="50" />
+    <Property Name="Id_hospital" Type="int" />
+    <Property Name="Cargo" Type="int" />
+    <Property Name="FechaN" Type="date" />
+    <Property Name="Sexo" Type="int" />
+    <Property Name="Direccion" Type="varchar" MaxLength="50" />
+    <Property Name="Telefono" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Login" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="Observacion" Type="text" />
+  </EntityType>
+  <EntityType Name="PACIENTES">
+    <Key>
+      <PropertyRef Name="Id_paciente" />
+    </Key>
+    <Property Name="Id_paciente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cedula" Type="varchar" MaxLength="10" />
+    <Property Name="Nombre1" Type="varchar" MaxLength="50" />
+    <Property Name="Nombre2" Type="varchar" MaxLength="50" />
+    <Property Name="Apellido1" Type="varchar" MaxLength="50" />
+    <Property Name="Apellido2" Type="nchar" MaxLength="10" />
+    <Property Name="TipoSangre" Type="int" />
+    <Property Name="FechaNacimiento" Type="date" />
+    <Property Name="Sexo" Type="int" />
+    <Property Name="Condicion" Type="int" />
+    <Property Name="Direccion" Type="varchar" MaxLength="50" />
+    <Property Name="TelefonoP" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="FamliarContacto" Type="varchar" MaxLength="50" />
+    <Property Name="TelefonoC" Type="varchar" MaxLength="50" />
+    <Property Name="Parentesco" Type="int" />
+  </EntityType>
+  <EntityType Name="PARENTESCOS">
+    <Key>
+      <PropertyRef Name="Id_Parentesco" />
+    </Key>
+    <Property Name="Id_Parentesco" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Parentesco" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PARROQUIAS">
+    <Key>
+      <PropertyRef Name="Id_parroquia" />
+    </Key>
+    <Property Name="Id_parroquia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_canton" Type="int" Nullable="false" />
+    <Property Name="Parroquia" Type="varchar" MaxLength="50" />
+    <Property Name="Numhabitantes" Type="int" />
+  </EntityType>
+  <EntityType Name="PROVINCIAS">
+    <Key>
+      <PropertyRef Name="Id_provincia" />
+    </Key>
+    <Property Name="Id_provincia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Provincia" Type="varchar" MaxLength="50" />
+    <Property Name="Region" Type="int" />
+  </EntityType>
+  <EntityType Name="RECETA">
+    <Key>
+      <PropertyRef Name="Id_receta" />
+    </Key>
+    <Property Name="Id_receta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_consulta" Type="int" />
+    <Property Name="Medicinas" Type="text" />
+    <Property Name="Indicaciones" Type="text" />
+  </EntityType>
+  <EntityType Name="REGIONES">
+    <Key>
+      <PropertyRef Name="Id_region" />
+    </Key>
+    <Property Name="Id_region" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Region" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SEXO">
+    <Key>
+      <PropertyRef Name="Id_sexo" />
+    </Key>
+    <Property Name="Id_sexo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sexo" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TIPO_EXAMENES">
+    <Key>
+      <PropertyRef Name="Id_examen" />
+    </Key>
+    <Property Name="Id_examen" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tipo" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TIPOS_H">
+    <Key>
+      <PropertyRef Name="Id_tipoh" />
+    </Key>
+    <Property Name="Id_tipoh" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tipo" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TIPOS_SANGE">
+    <Key>
+      <PropertyRef Name="Id_tipos" />
+    </Key>
+    <Property Name="Id_tipos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TipoSangre" Type="varchar" MaxLength="4" />
+  </EntityType>
+  <Association Name="FK_CANTONES_PROVINCIAS">
+    <End Role="PROVINCIAS" Type="Self.PROVINCIAS" Multiplicity="1" />
+    <End Role="CANTONES" Type="Self.CANTONES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROVINCIAS">
+        <PropertyRef Name="Id_provincia" />
+      </Principal>
+      <Dependent Role="CANTONES">
+        <PropertyRef Name="Id_provincia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CITAS_CITA_ESTADOS">
+    <End Role="CITA_ESTADOS" Type="Self.CITA_ESTADOS" Multiplicity="0..1" />
+    <End Role="CITAS" Type="Self.CITAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CITA_ESTADOS">
+        <PropertyRef Name="Id_estado" />
+      </Principal>
+      <Dependent Role="CITAS">
+        <PropertyRef Name="Estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CITAS_HOSPITALES">
+    <End Role="HOSPITALES" Type="Self.HOSPITALES" Multiplicity="0..1" />
+    <End Role="CITAS" Type="Self.CITAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOSPITALES">
+        <PropertyRef Name="Id_hospital" />
+      </Principal>
+      <Dependent Role="CITAS">
+        <PropertyRef Name="Id_hospital" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CITAS_MEDICOS">
+    <End Role="MEDICOS" Type="Self.MEDICOS" Multiplicity="1" />
+    <End Role="CITAS" Type="Self.CITAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MEDICOS">
+        <PropertyRef Name="Id_medico" />
+      </Principal>
+      <Dependent Role="CITAS">
+        <PropertyRef Name="Id_medico" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CITAS_PACIENTES">
+    <End Role="PACIENTES" Type="Self.PACIENTES" Multiplicity="1" />
+    <End Role="CITAS" Type="Self.CITAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PACIENTES">
+        <PropertyRef Name="Id_paciente" />
+      </Principal>
+      <Dependent Role="CITAS">
+        <PropertyRef Name="Id_paciente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CONSULTAS_CITAS">
+    <End Role="CITAS" Type="Self.CITAS" Multiplicity="0..1" />
+    <End Role="CONSULTAS" Type="Self.CONSULTAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CITAS">
+        <PropertyRef Name="Id_cita" />
+      </Principal>
+      <Dependent Role="CONSULTAS">
+        <PropertyRef Name="Id_cita" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EXAMENES_CONSULTAS">
+    <End Role="CONSULTAS" Type="Self.CONSULTAS" Multiplicity="0..1" />
+    <End Role="EXAMENES" Type="Self.EXAMENES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CONSULTAS">
+        <PropertyRef Name="Id_consulta" />
+      </Principal>
+      <Dependent Role="EXAMENES">
+        <PropertyRef Name="Id_Consulta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EXAMENES_TIPO_EXAMENES">
+    <End Role="TIPO_EXAMENES" Type="Self.TIPO_EXAMENES" Multiplicity="0..1" />
+    <End Role="EXAMENES" Type="Self.EXAMENES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPO_EXAMENES">
+        <PropertyRef Name="Id_examen" />
+      </Principal>
+      <Dependent Role="EXAMENES">
+        <PropertyRef Name="Id_examen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOSPITALES_AREAS">
+    <End Role="AREAS" Type="Self.AREAS" Multiplicity="0..1" />
+    <End Role="HOSPITALES" Type="Self.HOSPITALES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AREAS">
+        <PropertyRef Name="Id_area" />
+      </Principal>
+      <Dependent Role="HOSPITALES">
+        <PropertyRef Name="Area" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOSPITALES_CANTONES">
+    <End Role="CANTONES" Type="Self.CANTONES" Multiplicity="0..1" />
+    <End Role="HOSPITALES" Type="Self.HOSPITALES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CANTONES">
+        <PropertyRef Name="Id_canton" />
+      </Principal>
+      <Dependent Role="HOSPITALES">
+        <PropertyRef Name="Canton" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOSPITALES_CATEGORIAS">
+    <End Role="CATEGORIAS" Type="Self.CATEGORIAS" Multiplicity="0..1" />
+    <End Role="HOSPITALES" Type="Self.HOSPITALES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CATEGORIAS">
+        <PropertyRef Name="Id_categoria" />
+      </Principal>
+      <Dependent Role="HOSPITALES">
+        <PropertyRef Name="Categoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOSPITALES_PARROQUIAS">
+    <End Role="PARROQUIAS" Type="Self.PARROQUIAS" Multiplicity="0..1" />
+    <End Role="HOSPITALES" Type="Self.HOSPITALES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PARROQUIAS">
+        <PropertyRef Name="Id_parroquia" />
+      </Principal>
+      <Dependent Role="HOSPITALES">
+        <PropertyRef Name="Parroquia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOSPITALES_PROVINCIAS">
+    <End Role="PROVINCIAS" Type="Self.PROVINCIAS" Multiplicity="0..1" />
+    <End Role="HOSPITALES" Type="Self.HOSPITALES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROVINCIAS">
+        <PropertyRef Name="Id_provincia" />
+      </Principal>
+      <Dependent Role="HOSPITALES">
+        <PropertyRef Name="Provincia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOSPITALES_TIPOS_H">
+    <End Role="TIPOS_H" Type="Self.TIPOS_H" Multiplicity="0..1" />
+    <End Role="HOSPITALES" Type="Self.HOSPITALES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPOS_H">
+        <PropertyRef Name="Id_tipoh" />
+      </Principal>
+      <Dependent Role="HOSPITALES">
+        <PropertyRef Name="Tipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MEDICO_ESPECIALIDAD_ESPECIALIDADES">
+    <End Role="ESPECIALIDADES" Type="Self.ESPECIALIDADES" Multiplicity="0..1" />
+    <End Role="MEDICO_ESPECIALIDAD" Type="Self.MEDICO_ESPECIALIDAD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ESPECIALIDADES">
+        <PropertyRef Name="Id_especialidad" />
+      </Principal>
+      <Dependent Role="MEDICO_ESPECIALIDAD">
+        <PropertyRef Name="id_especialidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MEDICO_ESPECIALIDAD_MEDICOS">
+    <End Role="MEDICOS" Type="Self.MEDICOS" Multiplicity="0..1" />
+    <End Role="MEDICO_ESPECIALIDAD" Type="Self.MEDICO_ESPECIALIDAD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MEDICOS">
+        <PropertyRef Name="Id_medico" />
+      </Principal>
+      <Dependent Role="MEDICO_ESPECIALIDAD">
+        <PropertyRef Name="Id_Medico" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MEDICOS_CARGOS">
+    <End Role="CARGOS" Type="Self.CARGOS" Multiplicity="0..1" />
+    <End Role="MEDICOS" Type="Self.MEDICOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CARGOS">
+        <PropertyRef Name="Id_cargo" />
+      </Principal>
+      <Dependent Role="MEDICOS">
+        <PropertyRef Name="Cargo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MEDICOS_HOSPITALES">
+    <End Role="HOSPITALES" Type="Self.HOSPITALES" Multiplicity="0..1" />
+    <End Role="MEDICOS" Type="Self.MEDICOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOSPITALES">
+        <PropertyRef Name="Id_hospital" />
+      </Principal>
+      <Dependent Role="MEDICOS">
+        <PropertyRef Name="Id_hospital" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MEDICOS_SEXO">
+    <End Role="SEXO" Type="Self.SEXO" Multiplicity="0..1" />
+    <End Role="MEDICOS" Type="Self.MEDICOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SEXO">
+        <PropertyRef Name="Id_sexo" />
+      </Principal>
+      <Dependent Role="MEDICOS">
+        <PropertyRef Name="Sexo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PACIENTES_CONDICIONES">
+    <End Role="CONDICIONES" Type="Self.CONDICIONES" Multiplicity="0..1" />
+    <End Role="PACIENTES" Type="Self.PACIENTES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CONDICIONES">
+        <PropertyRef Name="Id_condicion" />
+      </Principal>
+      <Dependent Role="PACIENTES">
+        <PropertyRef Name="Condicion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PACIENTES_PARENTESCOS">
+    <End Role="PARENTESCOS" Type="Self.PARENTESCOS" Multiplicity="0..1" />
+    <End Role="PACIENTES" Type="Self.PACIENTES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PARENTESCOS">
+        <PropertyRef Name="Id_Parentesco" />
+      </Principal>
+      <Dependent Role="PACIENTES">
+        <PropertyRef Name="Parentesco" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PACIENTES_SEXO">
+    <End Role="SEXO" Type="Self.SEXO" Multiplicity="0..1" />
+    <End Role="PACIENTES" Type="Self.PACIENTES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SEXO">
+        <PropertyRef Name="Id_sexo" />
+      </Principal>
+      <Dependent Role="PACIENTES">
+        <PropertyRef Name="Sexo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PACIENTES_TIPOS_SANGE">
+    <End Role="TIPOS_SANGE" Type="Self.TIPOS_SANGE" Multiplicity="0..1" />
+    <End Role="PACIENTES" Type="Self.PACIENTES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPOS_SANGE">
+        <PropertyRef Name="Id_tipos" />
+      </Principal>
+      <Dependent Role="PACIENTES">
+        <PropertyRef Name="TipoSangre" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PARROQUIAS_CANTONES">
+    <End Role="CANTONES" Type="Self.CANTONES" Multiplicity="1" />
+    <End Role="PARROQUIAS" Type="Self.PARROQUIAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CANTONES">
+        <PropertyRef Name="Id_canton" />
+      </Principal>
+      <Dependent Role="PARROQUIAS">
+        <PropertyRef Name="Id_canton" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROVINCIAS_REGIONES">
+    <End Role="REGIONES" Type="Self.REGIONES" Multiplicity="0..1" />
+    <End Role="PROVINCIAS" Type="Self.PROVINCIAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="REGIONES">
+        <PropertyRef Name="Id_region" />
+      </Principal>
+      <Dependent Role="PROVINCIAS">
+        <PropertyRef Name="Region" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RECETA_CONSULTAS">
+    <End Role="CONSULTAS" Type="Self.CONSULTAS" Multiplicity="0..1" />
+    <End Role="RECETA" Type="Self.RECETA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CONSULTAS">
+        <PropertyRef Name="Id_consulta" />
+      </Principal>
+      <Dependent Role="RECETA">
+        <PropertyRef Name="Id_consulta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="GestionHospitalariaModelStoreContainer">
+    <EntitySet Name="AREAS" EntityType="Self.AREAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CANTONES" EntityType="Self.CANTONES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CARGOS" EntityType="Self.CARGOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CATEGORIAS" EntityType="Self.CATEGORIAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CITA_ESTADOS" EntityType="Self.CITA_ESTADOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CITAS" EntityType="Self.CITAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CONDICIONES" EntityType="Self.CONDICIONES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CONSULTAS" EntityType="Self.CONSULTAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ESPECIALIDADES" EntityType="Self.ESPECIALIDADES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EXAMENES" EntityType="Self.EXAMENES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HOSPITALES" EntityType="Self.HOSPITALES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MEDICO_ESPECIALIDAD" EntityType="Self.MEDICO_ESPECIALIDAD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MEDICOS" EntityType="Self.MEDICOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PACIENTES" EntityType="Self.PACIENTES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PARENTESCOS" EntityType="Self.PARENTESCOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PARROQUIAS" EntityType="Self.PARROQUIAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PROVINCIAS" EntityType="Self.PROVINCIAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RECETA" EntityType="Self.RECETA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="REGIONES" EntityType="Self.REGIONES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SEXO" EntityType="Self.SEXO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TIPO_EXAMENES" EntityType="Self.TIPO_EXAMENES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TIPOS_H" EntityType="Self.TIPOS_H" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TIPOS_SANGE" EntityType="Self.TIPOS_SANGE" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_CANTONES_PROVINCIAS" Association="Self.FK_CANTONES_PROVINCIAS">
+      <End Role="PROVINCIAS" EntitySet="PROVINCIAS" />
+      <End Role="CANTONES" EntitySet="CANTONES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CITAS_CITA_ESTADOS" Association="Self.FK_CITAS_CITA_ESTADOS">
+      <End Role="CITA_ESTADOS" EntitySet="CITA_ESTADOS" />
+      <End Role="CITAS" EntitySet="CITAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CITAS_HOSPITALES" Association="Self.FK_CITAS_HOSPITALES">
+      <End Role="HOSPITALES" EntitySet="HOSPITALES" />
+      <End Role="CITAS" EntitySet="CITAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CITAS_MEDICOS" Association="Self.FK_CITAS_MEDICOS">
+      <End Role="MEDICOS" EntitySet="MEDICOS" />
+      <End Role="CITAS" EntitySet="CITAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CITAS_PACIENTES" Association="Self.FK_CITAS_PACIENTES">
+      <End Role="PACIENTES" EntitySet="PACIENTES" />
+      <End Role="CITAS" EntitySet="CITAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CONSULTAS_CITAS" Association="Self.FK_CONSULTAS_CITAS">
+      <End Role="CITAS" EntitySet="CITAS" />
+      <End Role="CONSULTAS" EntitySet="CONSULTAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EXAMENES_CONSULTAS" Association="Self.FK_EXAMENES_CONSULTAS">
+      <End Role="CONSULTAS" EntitySet="CONSULTAS" />
+      <End Role="EXAMENES" EntitySet="EXAMENES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EXAMENES_TIPO_EXAMENES" Association="Self.FK_EXAMENES_TIPO_EXAMENES">
+      <End Role="TIPO_EXAMENES" EntitySet="TIPO_EXAMENES" />
+      <End Role="EXAMENES" EntitySet="EXAMENES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOSPITALES_AREAS" Association="Self.FK_HOSPITALES_AREAS">
+      <End Role="AREAS" EntitySet="AREAS" />
+      <End Role="HOSPITALES" EntitySet="HOSPITALES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOSPITALES_CANTONES" Association="Self.FK_HOSPITALES_CANTONES">
+      <End Role="CANTONES" EntitySet="CANTONES" />
+      <End Role="HOSPITALES" EntitySet="HOSPITALES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOSPITALES_CATEGORIAS" Association="Self.FK_HOSPITALES_CATEGORIAS">
+      <End Role="CATEGORIAS" EntitySet="CATEGORIAS" />
+      <End Role="HOSPITALES" EntitySet="HOSPITALES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOSPITALES_PARROQUIAS" Association="Self.FK_HOSPITALES_PARROQUIAS">
+      <End Role="PARROQUIAS" EntitySet="PARROQUIAS" />
+      <End Role="HOSPITALES" EntitySet="HOSPITALES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOSPITALES_PROVINCIAS" Association="Self.FK_HOSPITALES_PROVINCIAS">
+      <End Role="PROVINCIAS" EntitySet="PROVINCIAS" />
+      <End Role="HOSPITALES" EntitySet="HOSPITALES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOSPITALES_TIPOS_H" Association="Self.FK_HOSPITALES_TIPOS_H">
+      <End Role="TIPOS_H" EntitySet="TIPOS_H" />
+      <End Role="HOSPITALES" EntitySet="HOSPITALES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MEDICO_ESPECIALIDAD_ESPECIALIDADES" Association="Self.FK_MEDICO_ESPECIALIDAD_ESPECIALIDADES">
+      <End Role="ESPECIALIDADES" EntitySet="ESPECIALIDADES" />
+      <End Role="MEDICO_ESPECIALIDAD" EntitySet="MEDICO_ESPECIALIDAD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MEDICO_ESPECIALIDAD_MEDICOS" Association="Self.FK_MEDICO_ESPECIALIDAD_MEDICOS">
+      <End Role="MEDICOS" EntitySet="MEDICOS" />
+      <End Role="MEDICO_ESPECIALIDAD" EntitySet="MEDICO_ESPECIALIDAD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MEDICOS_CARGOS" Association="Self.FK_MEDICOS_CARGOS">
+      <End Role="CARGOS" EntitySet="CARGOS" />
+      <End Role="MEDICOS" EntitySet="MEDICOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MEDICOS_HOSPITALES" Association="Self.FK_MEDICOS_HOSPITALES">
+      <End Role="HOSPITALES" EntitySet="HOSPITALES" />
+      <End Role="MEDICOS" EntitySet="MEDICOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MEDICOS_SEXO" Association="Self.FK_MEDICOS_SEXO">
+      <End Role="SEXO" EntitySet="SEXO" />
+      <End Role="MEDICOS" EntitySet="MEDICOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PACIENTES_CONDICIONES" Association="Self.FK_PACIENTES_CONDICIONES">
+      <End Role="CONDICIONES" EntitySet="CONDICIONES" />
+      <End Role="PACIENTES" EntitySet="PACIENTES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PACIENTES_PARENTESCOS" Association="Self.FK_PACIENTES_PARENTESCOS">
+      <End Role="PARENTESCOS" EntitySet="PARENTESCOS" />
+      <End Role="PACIENTES" EntitySet="PACIENTES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PACIENTES_SEXO" Association="Self.FK_PACIENTES_SEXO">
+      <End Role="SEXO" EntitySet="SEXO" />
+      <End Role="PACIENTES" EntitySet="PACIENTES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PACIENTES_TIPOS_SANGE" Association="Self.FK_PACIENTES_TIPOS_SANGE">
+      <End Role="TIPOS_SANGE" EntitySet="TIPOS_SANGE" />
+      <End Role="PACIENTES" EntitySet="PACIENTES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PARROQUIAS_CANTONES" Association="Self.FK_PARROQUIAS_CANTONES">
+      <End Role="CANTONES" EntitySet="CANTONES" />
+      <End Role="PARROQUIAS" EntitySet="PARROQUIAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROVINCIAS_REGIONES" Association="Self.FK_PROVINCIAS_REGIONES">
+      <End Role="REGIONES" EntitySet="REGIONES" />
+      <End Role="PROVINCIAS" EntitySet="PROVINCIAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RECETA_CONSULTAS" Association="Self.FK_RECETA_CONSULTAS">
+      <End Role="CONSULTAS" EntitySet="CONSULTAS" />
+      <End Role="RECETA" EntitySet="RECETA" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

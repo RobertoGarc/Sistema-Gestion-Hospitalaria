@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E709D829-C705-4C5E-90F3-996B22FDDD45}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GAC_Logica_Negocio_10</RootNamespace>
+    <AssemblyName>GAC_Logica_Negocio_10</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GAC_Areas_10_Logica.cs" />
+    <Compile Include="GAC_Cantones_10_Logica.cs" />
+    <Compile Include="GAC_Cargos_10_Logica.cs" />
+    <Compile Include="GAC_Categorias_10_Logica.cs" />
+    <Compile Include="GAC_Citas_10_Logica.cs" />
+    <Compile Include="GAC_Cita_Estados_10_Logica.cs" />
+    <Compile Include="GAC_Condiciones_10_Logica.cs" />
+    <Compile Include="GAC_Consultas_10_Logica.cs" />
+    <Compile Include="GAC_Especialidades_10_Logica.cs" />
+    <Compile Include="GAC_Examenes_10_Logica.cs" />
+    <Compile Include="GAC_Hospitales_10_Logica.cs" />
+    <Compile Include="GAC_Medicos_10_Logica.cs" />
+    <Compile Include="GAC_Medico_Especialidad_10_Logica.cs" />
+    <Compile Include="GAC_Pacientes_10_Logica.cs" />
+    <Compile Include="GAC_Parentescos_10_Logica.cs" />
+    <Compile Include="GAC_Parroquias_10_Logica.cs" />
+    <Compile Include="GAC_Provincias_10_Logica.cs" />
+    <Compile Include="GAC_Receta_10_Logica.cs" />
+    <Compile Include="GAC_Regiones_10_Logica.cs" />
+    <Compile Include="GAC_Sexo_10_Logica.cs" />
+    <Compile Include="GAC_Tipos_H_10_Logica.cs" />
+    <Compile Include="GAC_Tipos_Sange_10_Logica.cs" />
+    <Compile Include="GAC_Tipo_Examen_10_Logica.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GAC_Acceso_Datos_10\GAC_Acceso_Datos_10.csproj">
+      <Project>{f4bd3fb2-2674-4539-9687-4959aabbb45c}</Project>
+      <Name>GAC_Acceso_Datos_10</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GAC_Entidades_10\GAC_Entidades_10.csproj">
+      <Project>{ccb04df0-e1f8-4a67-82cf-e65ac3b63ea1}</Project>
+      <Name>GAC_Entidades_10</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CCB04DF0-E1F8-4A67-82CF-E65AC3B63EA1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GAC_Entidades_10</RootNamespace>
+    <AssemblyName>GAC_Entidades_10</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AREAS.cs">
+      <DependentUpon>GAC_GestionHospitalaria_10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CANTONES.cs">
+      <DependentUpon>GAC_GestionHospitalaria_10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CARGOS.cs">
+      <DependentUpon>GAC_GestionHospitalaria_10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CATEGORIAS.cs">
+      <DependentUpon>GAC_GestionHospitalaria_10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CITAS.cs">
+      <DependentUpon>GAC_GestionHospitalaria_10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CITA_ESTADOS.cs">
+      <DependentUpon>GAC_GestionHospitalaria_10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Paciente_NombreCompleto.cs" />
+    <Compile Include="CONDICIONES.cs">
+      <DependentUpon>GAC_GestionHospitalaria_10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CONSULTAS.cs">
+      <DependentUpon>GAC_GestionHospitalaria_10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ESPECIALIDADES.cs">
+      <DependentUpon>GAC_GestionHospitalaria_10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EXAMENES.cs">
+      <DependentUpon>GAC_GestionHospitalaria_10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GAC_GestionHospitalaria_10.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GAC_GestionHospitalaria_10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HOSPITALES.cs">
+      <DependentUpon>GAC_GestionHospitalaria_10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MEDICOS.cs">
+      <DependentUpon>GAC_GestionHospitalaria_10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MEDICO_ESPECIALIDAD.cs">
+      <DependentUpon>GAC_GestionHospitalaria_10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PACIENTES.cs">
+      <DependentUpon>GAC_GestionHospitalaria_10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PARENTESCOS.cs">
+      <DependentUpon>GAC_GestionHospitalaria_10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PARROQUIAS.cs">
+      <DependentUpon>GAC_GestionHospitalaria_10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PROVINCIAS.cs">
+      <DependentUpon>GAC_GestionHospitalaria_10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RECETA.cs">
+      <DependentUpon>GAC_GestionHospitalaria_10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REGIONES.cs">
+      <DependentUpon>GAC_GestionHospitalaria_10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEXO.cs">
+      <DependentUpon>GAC_GestionHospitalaria_10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>GAC_GestionHospitalaria_10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TIPOS_H.cs">
+      <DependentUpon>GAC_GestionHospitalaria_10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TIPOS_SANGE.cs">
+      <DependentUpon>GAC_GestionHospitalaria_10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TIPO_EXAMENES.cs">
+      <DependentUpon>GAC_GestionHospitalaria_10.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GAC_GestionHospitalaria_10.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GAC_GestionHospitalaria_10.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
